@@ -1,4 +1,6 @@
 *.pickle
 *.xlsx
+*.db
+*.json
 
 artworks/

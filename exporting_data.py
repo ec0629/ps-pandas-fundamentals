@@ -41,3 +41,23 @@ with pd.ExcelWriter('colors.xlsx') as writer:
         'max_value': '99',
         'max_type': 'percentile'})
     writer.save()
+    
+    
+# SQL
+import sqlite3
+
+with sqlite3.connect('my_database.db') as conn:
+    small_df.to_sql('Tate', conn)
+    
+
+# JSON
+small_df.to_json('default.json')
+small_df.to_json('table.json', orient='table')
+
+
+
+
+
+
+
+
