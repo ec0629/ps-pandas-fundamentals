@@ -36,6 +36,10 @@ df.max()
 df['PRESSURE'].min()
 df['TEMP'].mode()
 
+# returns how many times a value is present
+# in a Series
+df['TEMP'].value_counts()
+
 df['TEMP'].plot()
 df['TEMP'].plot.hist()
 # explicitly set the number of bins
