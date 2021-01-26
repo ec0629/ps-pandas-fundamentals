@@ -38,6 +38,7 @@ grades[passing] = "Pass"
 
 grades = refreshDataFrame()
 # calculate student test average
+# axis=1 means we are now performing operations row-wise
 grades.mean(axis=1)
 grades.mean(axis=1) > 6
 # create and populate new column
