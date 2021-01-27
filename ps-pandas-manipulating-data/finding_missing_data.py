@@ -5,7 +5,6 @@ Created on Tue Jan 26 14:20:30 2021
 @author: jeff
 """
 
-import numpy as np
 import pandas as pd
 
 df = pd.read_csv('weather_m4.csv')
