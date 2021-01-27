@@ -35,6 +35,8 @@ df.loc[df.isnull().any(axis=1), 'YYYYMMDD'].value_counts()
 
 # drop rows with null values
 df.dropna()
+# drop columns with null values
+df.dropna(axis=1)
 nulls_dropped = df.dropna()
 nulls_dropped.info()
 
