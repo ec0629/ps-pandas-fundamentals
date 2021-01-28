@@ -39,3 +39,29 @@ df - pd.Series({'a': 5, 'b': 5, 'e': 5, 'f': 5})
 # mean for each row
 df.mean(axis=1)
 df.sub(df.mean(axis=1), axis=0)
+
+
+# Applying Functions
+df = pd.DataFrame({'sin': np.arange(0, 5*np.pi, 0.01),
+                   'cos': np.arange(0.5*np.pi, 5.5*np.pi, 0.01)})
+df
+
+# np.sin is a global function and will apply to each cell in the DataFrame
+df = np.sin(df)
+df.plot()
+
+# function to be applied column-wise
+def iqr(col):
+    q1 = col.quantile(.25)
+    q3 = col.quantile(.75)
+    return q3 - q1
+
+df.apply(iqr)
+# we could also apply a function row-wise by providing axis=1 option
+# df.apply(iqr, axis=1)
+
+# function to be applied to every cell
+def somefunc(x):
+    return np.abs(x+.25)
+
+df.applymap(somefunc).plot()
